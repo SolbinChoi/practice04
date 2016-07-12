@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class BookShop {
 	public static void main(String[] args) {
 		
-		Book[] books = new Book[10];
+		Book[] books = new Book[10]; //book 클래스 만들기   배열 총열개 관리번호+책제목+저자이름으로 객체를 생성
 		books[0] = new Book( 1, "트와일라잇", "스테파니메이어" );
 		books[1] = new Book( 2,"뉴문", "스테파니메이어" );
 		books[2] = new Book( 3,"이클립스","스테파니메이어");
@@ -18,14 +18,20 @@ public class BookShop {
 		books[9] = new Book( 10,"풀하우스","원수연");
 		
 		
+		
 		Scanner key = new Scanner(System.in);
 		System.out.print("대여 하고 싶은 책의 번호를 입력하세요:");
-		int num = key.nextInt();
 		
-		// 입력된 번호에 맞는 책을 찾아 대여 되었음(상태코드=0)을 체크 합니다.
-
+		int num = key.nextInt();
+		books[num-1].rent();
 		
 		System.out.println("*****도서 정보 출력하기******");
 		displayBookInfo(books);
+		
+	}
+	public static void displayBookInfo(Book[] books){
+		for(Book book : books){
+			book.print();
+		}
 	}
 }

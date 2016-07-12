@@ -8,7 +8,6 @@ public class MusicPhone extends Phone {
 			playMusic();
 			return;
 		}
-		
 		super.execute( function );
 	}
 
